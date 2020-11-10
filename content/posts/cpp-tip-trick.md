@@ -4,9 +4,9 @@ description: "Tổng hợp các thủ thuật C++"
 
 date: 2020-05-11T10:28:42+07:00
 
-images: ["/img/2020/cppBackground.png"]
-featuredImage: "/img/2020/cppBackground.png"
-featuredImagePreview: "/img/2020/cppBackground.png"
+images: ["/img/2020/cppBackground.jpg"]
+featuredImage: "/img/2020/cppBackground.jpg"
+featuredImagePreview: "/img/2020/cppBackground.jpg"
 
 tags: [C++, IT, Competitive programming]
 categories: ["programming"]
