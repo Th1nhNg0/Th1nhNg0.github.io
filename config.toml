@@ -7,6 +7,8 @@ title = "Thịnh Ngô Blog"
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 enableRobotsTXT = true
+# Deploy on github
+publishDir = "docs"
 
 #deploy
 name= "GitHub Pages action"
