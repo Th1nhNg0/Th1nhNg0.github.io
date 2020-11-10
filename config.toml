@@ -1,0 +1,224 @@
+baseURL = "http://thinhngo.codes/"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "en"
+# language code
+languageCode = "en"
+title = "Thịnh Ngô Blog"
+# Change the default theme to be use when building the site with Hugo
+theme = "LoveIt"
+enableRobotsTXT = true
+
+#deploy
+name= "GitHub Pages action"
+uses= "peaceiris/actions-gh-pages@v3.7.3"
+
+
+[params]
+  # LoveIt theme version
+  version = "0.2.X"
+  description = "Blog chia sẻ kiến thức về lập trình, toán,..."
+  images = ["/img/socialbg.png"]
+  keywords = ["blog", "programming","competitive programming"]
+  dateFormat = "01-02-2006"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About"
+    url = "/about/"
+    title = ""
+    weight = 5
+# Markup related configuration in Hugo
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration
+    # (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params.search]
+  enable = true
+  # type of search engine ("lunr", "algolia")
+  type = "lunr"
+  # max index length of the chunked content
+  contentLength = 4000
+  # placeholder of the search bar
+  placeholder = ""
+  #  max number of results length
+  maxResultLength = 10
+  #  snippet length of the result
+  snippetLength = 30
+  #  HTML tag name of the highlight part in results
+  highlightTag = "em"
+  #  whether to use the absolute URL based on the baseURL in search index
+  absoluteURL = false
+
+
+[params.footer]
+  enable = true
+  # LoveIt NEW | 0.2.0 Custom content (HTML format is supported)
+  custom = ''
+  # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
+  hugo = false
+  # LoveIt NEW | 0.2.0 whether to show copyright info
+  copyright = true
+  # LoveIt NEW | 0.2.0 whether to show the author
+  author = true
+  # Site creation time
+  since = 2020
+  icp = ""
+  # license info (HTML format is supported)
+  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+[params.home]
+  # LoveIt NEW | 0.2.0 amount of RSS pages
+  rss = 10
+  # Home page profile
+  [params.home.profile]
+    enable = true
+    # Gravatar Email for preferred avatar in home page
+    gravatarEmail = "ngophuthinh2001@gmail.com"
+    # URL of avatar shown in home page
+    # avatarURL = "http://github.com/th1nhNg0.png"
+    # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+    title = "Thịnh Ngô"
+    # subtitle shown in home page
+    subtitle = "Một cái blog nhỏ xinh <3"
+    # whether to use typeit animation for subtitle
+    typeit = true
+    # whether to show social links
+    social = true
+    # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
+    disclaimer = ""
+  # Home page posts
+  [params.home.posts]
+    enable = true
+    # special amount of posts in each home posts page
+    paginate = 6
+    # LoveIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
+    # default behavior when you don't set "hiddenFromHomePage" in front matter
+    defaultHiddenFromHomePage = false
+
+[params.social]
+  Facebook = "th1nhng0"
+  GitHub = "th1nhng0"
+  Instagram = "th1nhng0"
+  Email = "ngophuthinh2001@gmail.com"
+  RSS = true
+
+[params.page]
+  lightgallery = true
+
+  [params.page.share]
+    enable = true
+    Twitter = true
+    Facebook = true
+    HackerNews = true
+    Reddit = true
+  # LoveIt CHANGED | 0.2.0 Comment config
+  [params.page.comment]
+    enable = true
+    # Disqus comment config
+    [params.page.comment.disqus]
+      # LoveIt NEW | 0.1.1
+      enable = true
+      # Disqus shortname to use Disqus in posts
+      shortname = "thinhngo"
+ 
+  [params.page.seo]
+    # image URL
+    images = ['/img/socialbg.png']
+    # Publisher info
+    [params.page.seo.publisher]
+      name = "Thịnh Ngô Blog"
+      logoUrl = "/img/pawprint.png"
+  [params.page.math]
+    enable = true
+  [params.page.code]
+    copy = true
+    maxShownLines = 20
+
+
+
+
+# LoveIt NEW | 0.2.10 Site SEO config
+[params.seo]
+  # image URL
+  image = "/img/socialbg.png"
+  # thumbnail URL
+  thumbnailUrl = "/img/socialbg.png"
+
+# LoveIt NEW | 0.2.0 Analytics config
+[params.analytics]
+  enable = true
+  # Google Analytics
+  [params.analytics.google]
+    id = "G-RS0X9P8V87"
+    # whether to anonymize IP
+    anonymizeIP = true
+
+# LoveIt NEW | 0.2.7 Cookie consent config
+[params.cookieconsent]
+  enable = true
+  # text strings used for Cookie consent banner
+  [params.cookieconsent.content]
+    message = ""
+    dismiss = ""
+    link = ""
+
+
+# Author config
+[author]
+  name = "Thịnh Ngô"
+  email = "ngophuthinh2001@gmail.com"
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks config
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
+
