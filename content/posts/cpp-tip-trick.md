@@ -205,6 +205,6 @@ sort (myints, myints+8); // 12 26 32 33 45 53 71 80
 Và còn nhiều thuật toán nữa.
 [Xem thêm về thư viện thuật toán](http://www.cplusplus.com/reference/algorithm/)
 
-### Xem thêm thư viện STL
+## Xem thêm thư viện STL
 
 http://www.cplusplus.com/reference/stl/?kw=stl
