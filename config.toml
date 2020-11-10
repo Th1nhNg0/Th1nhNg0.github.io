@@ -50,6 +50,17 @@ uses= "peaceiris/actions-gh-pages@v3.7.3"
     title = ""
     weight = 3
   [[menu.main]]
+    identifier = "hoingu"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Hỏi Ngu"
+    url = "/hoi-ngu/"
+    # title will be shown when you hover on this menu link
+    title = "Những câu hỏi mà mình thắc mắc trong cuộc sống"
+    weight = 4
+  [[menu.main]]
     identifier = "about"
     pre = ""
     post = ""
