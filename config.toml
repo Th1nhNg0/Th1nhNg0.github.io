@@ -17,7 +17,7 @@ uses= "peaceiris/actions-gh-pages@v3.7.3"
   # LoveIt theme version
   version = "0.2.X"
   description = "Blog chia sẻ kiến thức về lập trình, toán,..."
-  images = ["/img/socialbg.png"]
+  images = ["/img/socialbg.jpg"]
   keywords = ["blog", "programming","competitive programming"]
   dateFormat = "01-02-2006"
 
