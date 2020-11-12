@@ -1,6 +1,29 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Thịnh Ngô Blog</title><link>http://thinhngo.codes/</link><description>Blog chia sẻ kiến thức về lập trình, toán,...</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor><webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Mon, 11 May 2020 10:28:42 +0700</lastBuildDate><atom:link href="http://thinhngo.codes/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ tips &amp; tricks</title><link>http://thinhngo.codes/cpp-tip-trick/</link><pubDate>Mon, 11 May 2020 10:28:42 +0700</pubDate><author>Author</author><guid>http://thinhngo.codes/cpp-tip-trick/</guid><description>&lt;div class="featured-image">
-&lt;img src="/img/2020/cppBackground.jpg" referrerpolicy="no-referrer">
-&lt;/div>Tổng hợp các thủ thuật C++</description></item><item><title>First post</title><link>http://thinhngo.codes/first-post/</link><pubDate>Sat, 11 Apr 2020 10:28:42 +0700</pubDate><author>Author</author><guid>http://thinhngo.codes/first-post/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Thịnh Ngô Blog</title>
+        <link>http://thinhngo.codes/</link>
+        <description>Blog chia sẻ kiến thức về lập trình, toán,...</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor>
+            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Mon, 11 May 2020 10:28:42 &#43;0700</lastBuildDate>
+            <atom:link href="http://thinhngo.codes/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>C&#43;&#43; tips &amp; tricks</title>
+    <link>http://thinhngo.codes/cpp-tip-trick/</link>
+    <pubDate>Mon, 11 May 2020 10:28:42 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/cpp-tip-trick/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/2020/cppBackground.jpg" referrerpolicy="no-referrer">
+            </div>Tổng hợp các thủ thuật C++]]></description>
+</item><item>
+    <title>First post</title>
+    <link>http://thinhngo.codes/first-post/</link>
+    <pubDate>Sat, 11 Apr 2020 10:28:42 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/first-post/</guid>
+    <description><![CDATA[<div class="featured-image">
                 <img src="/img/2020/first_post.jpg" referrerpolicy="no-referrer">
             </div>Xin chào, cảm ơn bạn đã ghé qua blog của mình. Mình vẫn chưa biết viết gì ở blog này nhưng mà mình nghĩ sẽ có nhiều thứ hay ho lắm. Các bạn cùng đón chờ nhé &lt;3
-  Mèo méo meo mèo meo   ]]></description></item></channel></rss>
+  Mèo méo meo mèo meo   ]]></description>
+</item></channel>
+</rss>

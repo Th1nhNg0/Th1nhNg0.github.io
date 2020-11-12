@@ -1,108 +1,440 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>C++ tips & tricks - Thịnh Ngô Blog</title><meta name=Description content="Tổng hợp các thủ thuật C++"><meta property="og:title" content="C++ tips & tricks"><meta property="og:description" content="Tổng hợp các thủ thuật C++"><meta property="og:type" content="article"><meta property="og:url" content="http://thinhngo.codes/cpp-tip-trick/"><meta property="og:image" content="http://thinhngo.codes/img/2020/cppBackground.jpg"><meta property="article:published_time" content="2020-05-11T10:28:42+07:00"><meta property="article:modified_time" content="2020-05-11T10:28:42+07:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://thinhngo.codes/img/2020/cppBackground.jpg"><meta name=twitter:title content="C++ tips & tricks"><meta name=twitter:description content="Tổng hợp các thủ thuật C++"><meta name=application-name content="Thịnh Ngô Blog"><meta name=apple-mobile-web-app-title content="Thịnh Ngô Blog"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://thinhngo.codes/cpp-tip-trick/><link rel=prev href=http://thinhngo.codes/first-post/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++ tips \u0026 tricks","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/thinhngo.codes\/cpp-tip-trick\/"},"image":["http:\/\/thinhngo.codes\/img\/socialbg.png"],"genre":"posts","keywords":"C\u002b\u002b, IT, Competitive programming","wordcount":1033,"url":"http:\/\/thinhngo.codes\/cpp-tip-trick\/","datePublished":"2020-05-11T10:28:42+07:00","dateModified":"2020-05-11T10:28:42+07:00","publisher":{"@type":"Organization","name":"Thịnh Ngô Blog","logo":"http:\/\/thinhngo.codes\/img\/pawprint.png"},"author":{"@type":"Person","name":"Thịnh Ngô"},"description":"Tổng hợp các thủ thuật C++"}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':(''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Thịnh Ngô Blog">Thịnh Ngô Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/hoingu/ title="Những câu hỏi mà mình thắc mắc trong cuộc sống">Hỏi Ngu </a><a class=menu-item href=/about/>About </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Thịnh Ngô Blog">Thịnh Ngô Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/hoingu/ title="Những câu hỏi mà mình thắc mắc trong cuộc sống">Hỏi Ngu</a><a class=menu-item href=/about/>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">C++ tips & tricks</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Thịnh Ngô</a></span>&nbsp;<span class=post-category>included in <a href=/categories/programming/><i class="far fa-folder fa-fw"></i>programming</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=05-11-2020>05-11-2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1033 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div></div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/img/2020/cppBackground.jpg data-srcset="/img/2020/cppBackground.jpg, /img/2020/cppBackground.jpg 1.5x, /img/2020/cppBackground.jpg 2x" data-sizes=auto alt=/img/2020/cppBackground.jpg title="Tổng hợp các thủ thuật C++"></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#mở-đầu>Mở đầu</a></li><li><a href=#template-mình-thường-dùng>Template mình thường dùng</a></li><li><a href=#sử-dụng-marco-để-code-nhanh-hơn>Sử dụng marco để code nhanh hơn</a></li><li><a href=#so-sánh-endl-và-n>So sánh <code>endl</code> và <code>'\n'</code></a></li><li><a href=#hàm-ước-chung-lớn-nhất-có-sẵn>Hàm ước chung lớn nhất có sẵn</a></li><li><a href=#sử-dụng-auto>Sử dụng auto</a></li><li><a href=#độ-dài-tối-đa-của-array>Độ dài tối đa của array</a></li><li><a href=#thư-viện-stl>Thư viện STL</a><ul><li><a href=#vector>Vector</a></li><li><a href=#priority-queue-hàng-đợi-ưu-tiên>Priority Queue (Hàng đợi ưu tiên)</a></li><li><a href=#set>Set</a></li><li><a href=#map>Map</a></li><li><a href=#thư-viện-thuật-toán>Thư viện thuật toán</a><ul><li><a href=#sắp-xếp>Sắp xếp:</a></li><li><a href=#tìm-kiếm-nhị-phân>Tìm kiếm nhị phân</a></li></ul></li><li><a href=#xem-thêm-thư-viện-stl>Xem thêm thư viện STL</a></li></ul></li></ul></nav></div></div><div class=content id=content><h1 id=mở-đầu>Mở đầu</h1><p>Xin chào, bài viết này tóm tắt lại vài thủ thuật hay ho mà mình học được khi chuyển từ pascal sang C++. Đa số những thủ thuật này được sử dụng trong CP (Competitive programming).</p><h1 id=template-mình-thường-dùng>Template mình thường dùng</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt; // inlucde tất cả thư viện có thể sử dụng khi đi CP</span><span class=cp>
-</span><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>C&#43;&#43; tips &amp; tricks - Thịnh Ngô Blog</title><meta name="Description" content="Tổng hợp các thủ thuật C&#43;&#43;"><meta property="og:title" content="C&#43;&#43; tips &amp; tricks" />
+<meta property="og:description" content="Tổng hợp các thủ thuật C&#43;&#43;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://thinhngo.codes/cpp-tip-trick/" />
+<meta property="og:image" content="http://thinhngo.codes/img/2020/cppBackground.jpg" />
+<meta property="article:published_time" content="2020-05-11T10:28:42+07:00" />
+<meta property="article:modified_time" content="2020-05-11T10:28:42+07:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://thinhngo.codes/img/2020/cppBackground.jpg"/>
 
-<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
-<span class=p>{</span>
-    <span class=n>freopen</span><span class=p>(</span><span class=s>&#34;input.txt&#34;</span><span class=p>,</span> <span class=s>&#34;r&#34;</span><span class=p>,</span> <span class=n>stdin</span><span class=p>);</span> <span class=c1>// Đọc file bằng cin
-</span><span class=c1></span>    <span class=n>freopen</span><span class=p>(</span><span class=s>&#34;output.txt&#34;</span><span class=p>,</span> <span class=s>&#34;w&#34;</span><span class=p>,</span> <span class=n>stdout</span><span class=p>);</span> <span class=c1>// Xuất file bằng cout
-</span><span class=c1></span>    <span class=n>ios_base</span><span class=o>::</span><span class=n>sync_with_stdio</span><span class=p>(</span><span class=nb>false</span><span class=p>);</span> <span class=n>cin</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=nb>NULL</span><span class=p>);</span> <span class=c1>// Đọc xuất file nhanh
-</span><span class=c1></span>    <span class=c1>// Code ở đây
-</span><span class=c1></span>
+<meta name="twitter:title" content="C&#43;&#43; tips &amp; tricks"/>
+<meta name="twitter:description" content="Tổng hợp các thủ thuật C&#43;&#43;"/>
+<meta name="application-name" content="Thịnh Ngô Blog">
+<meta name="apple-mobile-web-app-title" content="Thịnh Ngô Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://thinhngo.codes/cpp-tip-trick/" /><link rel="prev" href="http://thinhngo.codes/first-post/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C++ tips \u0026 tricks",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/thinhngo.codes\/cpp-tip-trick\/"
+        },"image": ["http:\/\/thinhngo.codes\/img\/socialbg.png"],"genre": "posts","keywords": "C\u002b\u002b, IT, Competitive programming","wordcount":  1033 ,
+        "url": "http:\/\/thinhngo.codes\/cpp-tip-trick\/","datePublished": "2020-05-11T10:28:42+07:00","dateModified": "2020-05-11T10:28:42+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Thịnh Ngô Blog","logo": "http:\/\/thinhngo.codes\/img\/pawprint.png"},"author": {
+                "@type": "Person",
+                "name": "Thịnh Ngô"
+            },"description": "Tổng hợp các thủ thuật C++"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Thịnh Ngô Blog">Thịnh Ngô Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống"> Hỏi Ngu </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Thịnh Ngô Blog">Thịnh Ngô Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống">Hỏi Ngu</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">C&#43;&#43; tips &amp; tricks</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Thịnh Ngô</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw"></i>programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="05-11-2020">05-11-2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1033 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/2020/cppBackground.jpg"
+        data-srcset="/img/2020/cppBackground.jpg, /img/2020/cppBackground.jpg 1.5x, /img/2020/cppBackground.jpg 2x"
+        data-sizes="auto"
+        alt="/img/2020/cppBackground.jpg"
+        title="Tổng hợp các thủ thuật C&#43;&#43;" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mở-đầu">Mở đầu</a></li>
+    <li><a href="#template-mình-thường-dùng">Template mình thường dùng</a></li>
+    <li><a href="#sử-dụng-marco-để-code-nhanh-hơn">Sử dụng marco để code nhanh hơn</a></li>
+    <li><a href="#so-sánh-endl-và-n">So sánh <code>endl</code> và <code>'\n'</code></a></li>
+    <li><a href="#hàm-ước-chung-lớn-nhất-có-sẵn">Hàm ước chung lớn nhất có sẵn</a></li>
+    <li><a href="#sử-dụng-auto">Sử dụng auto</a></li>
+    <li><a href="#độ-dài-tối-đa-của-array">Độ dài tối đa của array</a></li>
+    <li><a href="#thư-viện-stl">Thư viện STL</a>
+      <ul>
+        <li><a href="#vector">Vector</a></li>
+        <li><a href="#priority-queue-hàng-đợi-ưu-tiên">Priority Queue (Hàng đợi ưu tiên)</a></li>
+        <li><a href="#set">Set</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#thư-viện-thuật-toán">Thư viện thuật toán</a>
+          <ul>
+            <li><a href="#sắp-xếp">Sắp xếp:</a></li>
+            <li><a href="#tìm-kiếm-nhị-phân">Tìm kiếm nhị phân</a></li>
+          </ul>
+        </li>
+        <li><a href="#xem-thêm-thư-viện-stl">Xem thêm thư viện STL</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="mở-đầu">Mở đầu</h1>
+<p>Xin chào, bài viết này tóm tắt lại vài thủ thuật hay ho mà mình học được khi chuyển từ pascal sang C++. Đa số những thủ thuật này được sử dụng trong CP (Competitive programming).</p>
+<h1 id="template-mình-thường-dùng">Template mình thường dùng</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt; // inlucde tất cả thư viện có thể sử dụng khi đi CP</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;input.txt&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span> <span class="c1">// Đọc file bằng cin
+</span><span class="c1"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;output.txt&#34;</span><span class="p">,</span> <span class="s">&#34;w&#34;</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span> <span class="c1">// Xuất file bằng cout
+</span><span class="c1"></span>    <span class="n">ios_base</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span> <span class="c1">// Đọc xuất file nhanh
+</span><span class="c1"></span>    <span class="c1">// Code ở đây
+</span><span class="c1"></span>
 
 
-    <span class=c1>// Thời gian chạy của thuật toán
-</span><span class=c1></span>    <span class=n>cerr</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;time taken : &#34;</span> <span class=o>&lt;&lt;</span> <span class=p>(</span><span class=kt>float</span><span class=p>)</span><span class=n>clock</span><span class=p>()</span> <span class=o>/</span> <span class=n>CLOCKS_PER_SEC</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; secs </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>;</span>
-    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-<span class=p>}</span>
-</code></pre></td></tr></table></div></div><h1 id=sử-dụng-marco-để-code-nhanh-hơn>Sử dụng marco để code nhanh hơn</h1><p>Ví dụ:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=kt>long</span> <span class=kt>long</span> <span class=n>x</span><span class=o>=</span><span class=mi>4</span><span class=p>;</span>
-<span class=n>pair</span><span class=o>&lt;</span><span class=kt>long</span> <span class=kt>long</span><span class=p>,</span><span class=kt>long</span> <span class=kt>long</span><span class=o>&gt;</span> <span class=n>k</span><span class=p>;</span>
-<span class=n>vector</span><span class=o>&lt;</span><span class=kt>long</span> <span class=kt>long</span><span class=o>&gt;</span> <span class=n>a</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><p>Có thể chuyển thành</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#define ll long long
-</span><span class=cp></span><span class=n>ll</span> <span class=n>x</span><span class=o>=</span><span class=mi>4</span><span class=p>;</span>
-<span class=n>pair</span><span class=o>&lt;</span><span class=n>ll</span><span class=p>,</span> <span class=n>ll</span><span class=o>&gt;</span> <span class=n>k</span><span class=p>;</span>
-<span class=n>vector</span><span class=o>&lt;</span><span class=n>ll</span><span class=o>&gt;</span> <span class=n>a</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><h1 id=so-sánh-endl-và-n>So sánh <code>endl</code> và <code>'\n'</code></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span> <span class=c1>// In ký tự xuống dòng và flush stream
-</span><span class=c1></span><span class=n>cout</span><span class=o>&lt;&lt;</span><span class=sc>&#39;\n&#39;</span><span class=p>;</span> <span class=c1>// Chỉ in ký tự xuống dòng
-</span></code></pre></td></tr></table></div></div><p>Ta thấy, sử dụng <code>'\n'</code> sẽ nhanh hơn rất nhiều khi in một lượng lớn ký tự xuống dòng.
-Thực vậy, thử với 2 chương trình sau:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>1000000</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
-    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
-<span class=c1>// Run time: 2.463 secs
-</span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>1000000</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
-    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=sc>&#39;\n&#39;</span><span class=p>;</span>
-<span class=c1>// Run time: 0.093 secs
-</span></code></pre></td></tr></table></div></div><h1 id=hàm-ước-chung-lớn-nhất-có-sẵn>Hàm ước chung lớn nhất có sẵn</h1><p>Trong C++, có hàm <code>__gcd(m,n)</code> trả về giá trị ước chung lớn nhất của 2 số m và n. Độ phức tạp của thuật toán này là $ O(\log_{2}{max(n,m)}) $.</p><h1 id=sử-dụng-auto>Sử dụng auto</h1><p>Từ phiên bản C++11 trở về sau, từ khóa auto được dùng để tự động nhận dạng kiểu dữ liệu thông qua kiểu dữ liệu của giá trị khởi tạo ra nó.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>auto</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=c1>// 1 là kiểu int =&gt; a kiểu int
-</span><span class=c1></span><span class=k>auto</span> <span class=n>b</span> <span class=o>=</span> <span class=mf>1.0F</span><span class=p>;</span> <span class=c1>// 1.0F là kiểu float =&gt; b kiểu float
-</span><span class=c1></span><span class=k>auto</span> <span class=n>c</span> <span class=o>=</span> <span class=mf>1.0</span><span class=p>;</span> <span class=c1>// 1.0 là kiểu double =&gt; c kiểu double
-</span></code></pre></td></tr></table></div></div><h1 id=độ-dài-tối-đa-của-array>Độ dài tối đa của array</h1><p>Khi khai báo array trong hàm <code>main()</code> thì độ dài tối đa là $ 10^{6} $ nhưng khi ta khai báo biến toàn cục thì độ dài có thể lên tới $ 10^{7} $.</p><h1 id=thư-viện-stl>Thư viện STL</h1><p>Thư viện STL là thứ mà mình thấy xịn nhất từ trước tới nay khi mình chuyển từ Pascal qua. Nó gần như giải quyết được mọi vấn đề mà Pascal phải tốn rất nhiều công sức mới làm được ^_^</p><h2 id=vector>Vector</h2><p>Vector làm việc giống như một “mảng động”.</p><p>Khai báo: <code>vector&lt;kiểu_dữ_liệu> tên_biến</code>.</p><p>Sử dụng <strong>vector</strong> sẽ tốt khi:</p><ul><li>Truy cập đến phần tử riêng lẻ thông qu a vị trí của nó $ O(1) $</li><li>Chèn hay xóa ở vị trí cuối cùng $ O(1) $.</li></ul><p><a href=http://www.cplusplus.com/reference/vector/vector/ target=_blank rel="noopener noreffer">Tìm hiểu thêm về Vector</a></p><h2 id=priority-queue-hàng-đợi-ưu-tiên>Priority Queue (Hàng đợi ưu tiên)</h2><p>Priority queue là một loại container adaptor, được thiết kế đặc biệt để phần tử ở đầu luôn luôn lớn nhất (theo một quy ước về độ ưu tiên nào đó) so với các phần tử khác.</p><p>Khai báo:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=n>priority_queue</span> <span class=o>&lt;</span> <span class=kt>int</span> <span class=o>&gt;</span> <span class=n>pq</span><span class=p>;</span> <span class=c1>// mặc định là lớn nhất
-</span><span class=c1>// Sử dụng hàm so sánh khác
-</span><span class=c1></span><span class=n>priority_queue</span> <span class=o>&lt;</span> <span class=kt>int</span><span class=p>,</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span><span class=p>,</span><span class=n>greater</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><p>Sử dụng <strong>priority queue</strong> sẽ tốt khi:</p><ul><li>Vừa thêm phần từ, vừa lấy phần tử lớn nhất (nhỏ nhất) ra. Thao tác thêm phần tử chỉ mất $ O(\log{n})$</li><li>Tăng tốc độ thuật toán Dijkstra</li></ul><p><a href=http://www.cplusplus.com/reference/queue/priority_queue/ target=_blank rel="noopener noreffer">Tìm hiểu thêm về Priority Queue</a></p><h2 id=set>Set</h2><p>Set là một loại associative containers để lưu trữ các phần tử không bị trùng lặp (unique elements), và các phần tử này chính là các khóa (keys).</p><p>Khai báo tương tự <strong>Priority Queue</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=n>set</span> <span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>s</span><span class=p>;</span>
-<span class=n>set</span> <span class=o>&lt;</span><span class=kt>int</span><span class=p>,</span> <span class=n>greater</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=o>&gt;</span> <span class=n>s</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><p><a href="http://www.cplusplus.com/reference/set/set/?kw=set" target=_blank rel="noopener noreffer">Tìm hiểu thêm về Set</a></p><h2 id=map>Map</h2><p>Map là một loại associative container. Mỗi phần tử của map là sự kết hợp của khóa (key value) và ánh xạ của nó (mapped value). Cũng giống như set, trong map không chứa các khóa mang giá trị giống nhau.</p><p>Khai báo:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=n>map</span> <span class=o>&lt;</span> <span class=n>kieu_du_lieu_1</span> <span class=p>,</span> <span class=n>kieu_du_lieu_2</span> <span class=o>&gt;</span> <span class=n>m</span><span class=p>;</span>
-<span class=c1>// kieu_du_lieu_1 là khóa, kieu_du_lieu_2 là giá trị của khóa.
-</span><span class=c1></span>
-<span class=c1>//Sử dụng class so sánh:
-</span><span class=c1></span><span class=k>struct</span> <span class=nc>cmp</span><span class=p>{</span>
- <span class=kt>bool</span> <span class=nf>operator</span><span class=p>()</span> <span class=p>(</span><span class=kt>char</span> <span class=n>a</span><span class=p>,</span><span class=kt>char</span> <span class=n>b</span><span class=p>)</span> <span class=p>{</span><span class=k>return</span> <span class=n>a</span><span class=o>&lt;</span><span class=n>b</span><span class=p>;}</span>
-<span class=p>};</span>
-<span class=n>map</span> <span class=o>&lt;</span><span class=kt>char</span><span class=p>,</span><span class=kt>int</span><span class=p>,</span><span class=n>cmp</span><span class=o>&gt;</span> <span class=n>m</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><p><a href="http://www.cplusplus.com/reference/map/map/?kw=map" target=_blank rel="noopener noreffer">Tìm hiểu thêm về Map</a></p><h2 id=thư-viện-thuật-toán>Thư viện thuật toán</h2><p>Khai báo sử dụng: <code>#include &lt;algorithm></code></p><h3 id=sắp-xếp>Sắp xếp:</h3><p>sort: sắp xếp đoạn phần tử theo một trình tự nào đó. Mặc định của sort là sử dụng operator &lt;.</p><p>Bạn có thể sử dụng hàm so sánh, hay class so sánh tự định nghĩa để sắp xếp cho linh hoạt.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=kt>int</span> <span class=n>myints</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>32</span><span class=p>,</span><span class=mi>71</span><span class=p>,</span><span class=mi>12</span><span class=p>,</span><span class=mi>45</span><span class=p>,</span><span class=mi>26</span><span class=p>,</span><span class=mi>80</span><span class=p>,</span><span class=mi>53</span><span class=p>,</span><span class=mi>33</span><span class=p>};</span>
-<span class=n>sort</span> <span class=p>(</span><span class=n>myints</span><span class=p>,</span> <span class=n>myints</span><span class=o>+</span><span class=mi>4</span><span class=p>);</span> <span class=c1>// (12 32 45 71)26 80 53 33
-</span><span class=c1></span><span class=n>sort</span> <span class=p>(</span><span class=n>myints</span><span class=p>,</span> <span class=n>myints</span><span class=o>+</span><span class=mi>8</span><span class=p>);</span> <span class=c1>// 12 26 32 33 45 53 71 80
-</span></code></pre></td></tr></table></div></div><h3 id=tìm-kiếm-nhị-phân>Tìm kiếm nhị phân</h3><ul><li><p><strong>binary_search</strong>: tìm kiếm xem khóa có trong đoạn cần tìm không. <em>Lưu ý</em>: đoạn tìm kiếm phải được sắp xếp theo một trật tự nhất đinh. Nếu tìm được sẽ return true, ngược lại return false.</p><p>Dạng 1: binary_search(vị trí bắt đầu, vị trí kết thúc, khóa)</p><p>Dạng 2: binary_search(vị trí bắt đầu, vị trí kết thúc, khóa, phép so sánh)</p></li><li><p><strong>lower_bound</strong>: trả về iterator đến phần tử đầu tiên trong nửa đoạn [first,last] mà không bé hơn khóa tìm kiếm.</p><p>Dạng 1: lower_bound( vị trí bắt đầu, vị trí kết thúc, khóa )</p><p>Dạng 2: lower_bound( vị trí bắt đầu, vị trí kết thúc, khóa , phép toán so sánh)</p></li><li><p><strong>upper_bound</strong>: trả về iterator đến phần tử đầu tiên trong nửa đoạn [first,last] mà lớn hơn khóa tìm kiếm.</p><p>Dạng 1: upper_bound( vị trí bắt đầu, vị trí kết thúc, khóa )</p><p>Dạng 2: upper_bound( vị trí bắt đầu, vị trí kết thúc, khóa , phép toán so sánh)</p></li></ul><p>Và còn nhiều thuật toán nữa.
-<a href=http://www.cplusplus.com/reference/algorithm/ target=_blank rel="noopener noreffer">Xem thêm về thư viện thuật toán</a></p><h2 id=xem-thêm-thư-viện-stl>Xem thêm thư viện STL</h2><p><a href="http://www.cplusplus.com/reference/stl/?kw=stl">http://www.cplusplus.com/reference/stl/?kw=stl</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 05-11-2020</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://thinhngo.codes/cpp-tip-trick/ data-title="C++ tips & tricks" data-hashtags="C++,IT,Competitive programming"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=http://thinhngo.codes/cpp-tip-trick/ data-hashtag=C++><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://thinhngo.codes/cpp-tip-trick/ data-title="C++ tips & tricks"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://thinhngo.codes/cpp-tip-trick/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/c++/>C++</a>,&nbsp;<a href=/tags/it/>IT</a>,&nbsp;<a href=/tags/competitive-programming/>Competitive programming</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/first-post/ class=prev rel=prev title="First post"><i class="fas fa-angle-left fa-fw"></i>First post</a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Thịnh Ngô</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://thinhngo.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RS0X9P8V87',{'anonymize_ip':true});</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-RS0X9P8V87" async></script></body></html>
+    <span class="c1">// Thời gian chạy của thuật toán
+</span><span class="c1"></span>    <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;time taken : &#34;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">clock</span><span class="p">()</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; secs </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="sử-dụng-marco-để-code-nhanh-hơn">Sử dụng marco để code nhanh hơn</h1>
+<p>Ví dụ:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">k</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Có thể chuyển thành</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define ll long long
+</span><span class="cp"></span><span class="n">ll</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="n">ll</span><span class="p">,</span> <span class="n">ll</span><span class="o">&gt;</span> <span class="n">k</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="so-sánh-endl-và-n">So sánh <code>endl</code> và <code>'\n'</code></h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// In ký tự xuống dòng và flush stream
+</span><span class="c1"></span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">// Chỉ in ký tự xuống dòng
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Ta thấy, sử dụng <code>'\n'</code> sẽ nhanh hơn rất nhiều khi in một lượng lớn ký tự xuống dòng.
+Thực vậy, thử với 2 chương trình sau:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="c1">// Run time: 2.463 secs
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="c1">// Run time: 0.093 secs
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="hàm-ước-chung-lớn-nhất-có-sẵn">Hàm ước chung lớn nhất có sẵn</h1>
+<p>Trong C++, có hàm <code>__gcd(m,n)</code> trả về giá trị ước chung lớn nhất của 2 số m và n. Độ phức tạp của thuật toán này là $ O(\log_{2}{max(n,m)}) $.</p>
+<h1 id="sử-dụng-auto">Sử dụng auto</h1>
+<p>Từ phiên bản C++11 trở về sau, từ khóa auto được dùng để tự động nhận dạng kiểu dữ liệu thông qua kiểu dữ liệu của giá trị khởi tạo ra nó.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1 là kiểu int =&gt; a kiểu int
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">1.0F</span><span class="p">;</span> <span class="c1">// 1.0F là kiểu float =&gt; b kiểu float
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="c1">// 1.0 là kiểu double =&gt; c kiểu double
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="độ-dài-tối-đa-của-array">Độ dài tối đa của array</h1>
+<p>Khi khai báo array trong hàm <code>main()</code> thì độ dài tối đa là $ 10^{6} $ nhưng khi ta khai báo biến toàn cục thì độ dài có thể lên tới $ 10^{7} $.</p>
+<h1 id="thư-viện-stl">Thư viện STL</h1>
+<p>Thư viện STL là thứ mà mình thấy xịn nhất từ trước tới nay khi mình chuyển từ Pascal qua. Nó gần như giải quyết được mọi vấn đề mà Pascal phải tốn rất nhiều công sức mới làm được ^_^</p>
+<h2 id="vector">Vector</h2>
+<p>Vector làm việc giống như một “mảng động”.</p>
+<p>Khai báo: <code>vector&lt;kiểu_dữ_liệu&gt; tên_biến</code>.</p>
+<p>Sử dụng <strong>vector</strong> sẽ tốt khi:</p>
+<ul>
+<li>Truy cập đến phần tử riêng lẻ thông qu a vị trí của nó $ O(1) $</li>
+<li>Chèn hay xóa ở vị trí cuối cùng $ O(1) $.</li>
+</ul>
+<p><a href="http://www.cplusplus.com/reference/vector/vector/" target="_blank" rel="noopener noreffer">Tìm hiểu thêm về Vector</a></p>
+<h2 id="priority-queue-hàng-đợi-ưu-tiên">Priority Queue (Hàng đợi ưu tiên)</h2>
+<p>Priority queue là một loại container adaptor, được thiết kế đặc biệt để phần tử ở đầu luôn luôn lớn nhất (theo một quy ước về độ ưu tiên nào đó) so với các phần tử khác.</p>
+<p>Khai báo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">priority_queue</span> <span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span> <span class="c1">// mặc định là lớn nhất
+</span><span class="c1">// Sử dụng hàm so sánh khác
+</span><span class="c1"></span><span class="n">priority_queue</span> <span class="o">&lt;</span> <span class="kt">int</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Sử dụng <strong>priority queue</strong> sẽ tốt khi:</p>
+<ul>
+<li>Vừa thêm phần từ, vừa lấy phần tử lớn nhất (nhỏ nhất) ra. Thao tác thêm phần tử chỉ mất $ O(\log{n})$</li>
+<li>Tăng tốc độ thuật toán Dijkstra</li>
+</ul>
+<p><a href="http://www.cplusplus.com/reference/queue/priority_queue/" target="_blank" rel="noopener noreffer">Tìm hiểu thêm về Priority Queue</a></p>
+<h2 id="set">Set</h2>
+<p>Set là một loại associative containers để lưu trữ các phần tử không bị trùng lặp (unique elements), và các phần tử này chính là các khóa (keys).</p>
+<p>Khai báo tương tự <strong>Priority Queue</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">set</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">set</span> <span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="http://www.cplusplus.com/reference/set/set/?kw=set" target="_blank" rel="noopener noreffer">Tìm hiểu thêm về Set</a></p>
+<h2 id="map">Map</h2>
+<p>Map là một loại associative container. Mỗi phần tử của map là sự kết hợp của khóa (key value) và ánh xạ của nó (mapped value). Cũng giống như set, trong map không chứa các khóa mang giá trị giống nhau.</p>
+<p>Khai báo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">map</span> <span class="o">&lt;</span> <span class="n">kieu_du_lieu_1</span> <span class="p">,</span> <span class="n">kieu_du_lieu_2</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+<span class="c1">// kieu_du_lieu_1 là khóa, kieu_du_lieu_2 là giá trị của khóa.
+</span><span class="c1"></span>
+<span class="c1">//Sử dụng class so sánh:
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">cmp</span><span class="p">{</span>
+ <span class="kt">bool</span> <span class="nf">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">char</span> <span class="n">a</span><span class="p">,</span><span class="kt">char</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="p">;}</span>
+<span class="p">};</span>
+<span class="n">map</span> <span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="kt">int</span><span class="p">,</span><span class="n">cmp</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="http://www.cplusplus.com/reference/map/map/?kw=map" target="_blank" rel="noopener noreffer">Tìm hiểu thêm về Map</a></p>
+<h2 id="thư-viện-thuật-toán">Thư viện thuật toán</h2>
+<p>Khai báo sử dụng: <code>#include &lt;algorithm&gt;</code></p>
+<h3 id="sắp-xếp">Sắp xếp:</h3>
+<p>sort: sắp xếp đoạn phần tử theo một trình tự nào đó. Mặc định của sort là sử dụng operator &lt;.</p>
+<p>Bạn có thể sử dụng hàm so sánh, hay class so sánh tự định nghĩa để sắp xếp cho linh hoạt.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
+<span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// (12 32 45 71)26 80 53 33
+</span><span class="c1"></span><span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span> <span class="c1">// 12 26 32 33 45 53 71 80
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="tìm-kiếm-nhị-phân">Tìm kiếm nhị phân</h3>
+<ul>
+<li>
+<p><strong>binary_search</strong>: tìm kiếm xem khóa có trong đoạn cần tìm không. <em>Lưu ý</em>: đoạn tìm kiếm phải được sắp xếp theo một trật tự nhất đinh. Nếu tìm được sẽ return true, ngược lại return false.</p>
+<p>Dạng 1: binary_search(vị trí bắt đầu, vị trí kết thúc, khóa)</p>
+<p>Dạng 2: binary_search(vị trí bắt đầu, vị trí kết thúc, khóa, phép so sánh)</p>
+</li>
+<li>
+<p><strong>lower_bound</strong>: trả về iterator đến phần tử đầu tiên trong nửa đoạn [first,last] mà không bé hơn khóa tìm kiếm.</p>
+<p>Dạng 1: lower_bound( vị trí bắt đầu, vị trí kết thúc, khóa )</p>
+<p>Dạng 2: lower_bound( vị trí bắt đầu, vị trí kết thúc, khóa , phép toán so sánh)</p>
+</li>
+<li>
+<p><strong>upper_bound</strong>: trả về iterator đến phần tử đầu tiên trong nửa đoạn [first,last] mà lớn hơn khóa tìm kiếm.</p>
+<p>Dạng 1: upper_bound( vị trí bắt đầu, vị trí kết thúc, khóa )</p>
+<p>Dạng 2: upper_bound( vị trí bắt đầu, vị trí kết thúc, khóa , phép toán so sánh)</p>
+</li>
+</ul>
+<p>Và còn nhiều thuật toán nữa.
+<a href="http://www.cplusplus.com/reference/algorithm/" target="_blank" rel="noopener noreffer">Xem thêm về thư viện thuật toán</a></p>
+<h2 id="xem-thêm-thư-viện-stl">Xem thêm thư viện STL</h2>
+<p><a href="http://www.cplusplus.com/reference/stl/?kw=stl">http://www.cplusplus.com/reference/stl/?kw=stl</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 05-11-2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://thinhngo.codes/cpp-tip-trick/" data-title="C&#43;&#43; tips &amp; tricks" data-hashtags="C&#43;&#43;,IT,Competitive programming"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://thinhngo.codes/cpp-tip-trick/" data-hashtag="C&#43;&#43;"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://thinhngo.codes/cpp-tip-trick/" data-title="C&#43;&#43; tips &amp; tricks"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://thinhngo.codes/cpp-tip-trick/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>,&nbsp;<a href="/tags/it/">IT</a>,&nbsp;<a href="/tags/competitive-programming/">Competitive programming</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/first-post/" class="prev" rel="prev" title="First post"><i class="fas fa-angle-left fa-fw"></i>First post</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Thịnh Ngô</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js', { scope: '/' })
+        .then(() => {
+            console.info('Developer for Life Service Worker Registered');
+        }, err => console.error("Developer for Life Service Worker registration failed: ", err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('Developer for Life Service Worker Ready');
+        });
+}
+</script></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://thinhngo.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-RS0X9P8V87', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-RS0X9P8V87" async></script></body>
+</html>
