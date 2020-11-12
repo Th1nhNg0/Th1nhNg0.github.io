@@ -71,9 +71,9 @@ const MAX_TTL = {
 };
 
 const CACHE_BLACKLIST = [
-  (str) => {
-     return !str.startsWith('https://thinhngo.codes');
-  },
+  // (str) => {
+  //    return !str.startsWith('https://thinhngo.codes');
+  // },
 ];
 
 const SUPPORTED_METHODS = ["GET"];
