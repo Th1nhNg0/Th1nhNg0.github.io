@@ -1,4 +1,4 @@
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 1.2;
 
 const BASE_CACHE_FILES = [
   "/lib/normalize/normalize.min.css",
@@ -24,7 +24,7 @@ const BASE_CACHE_FILES = [
   "/js/theme.min.js",
 ];
 
-const OFFLINE_CACHE_FILES = ["/lib"];
+const OFFLINE_CACHE_FILES = [];
 
 const NOT_FOUND_CACHE_FILES = [
   "/lib/normalize/normalize.min.css",
@@ -51,7 +51,7 @@ const NOT_FOUND_CACHE_FILES = [
   "/404.html",
 ];
 
-const OFFLINE_PAGE = "/offline/";
+const OFFLINE_PAGE = "/";
 const NOT_FOUND_PAGE = "/404.html";
 
 const CACHE_VERSIONS = {
