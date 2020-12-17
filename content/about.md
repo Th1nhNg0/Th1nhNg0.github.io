@@ -12,6 +12,12 @@ comment: false
 - Sinh viên năm 2 khoa **_toán tin_** trường _Đại học Khoa học Tự Nhiên ĐHQG TP.HCM_
 - Mình thích lập trình, toán và guitar
 
+# Contact me:
+
+[Facebook](https://www.facebook.com/Th1nhNg0/)
+[Email](mailto:thinhngow@gmail.com)
+[Github](https://github.com/th1nhng0)
+
 # Mục đích mình tạo ra blog này
 
 Thấy vui nên làm thử :D
