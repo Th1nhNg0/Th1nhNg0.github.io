@@ -62,6 +62,7 @@ trainer.train("chatterbot.corpus.english")
 
 # phản hồi từ bot với đoạn chat "Hello"
 response = chatbot.get_response("Hello")
+print(response)
 ```
 
 Chạy đoạn code trên:
