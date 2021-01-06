@@ -150,7 +150,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 chatbot = ChatBot(
     'Bot THong Minh',
     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
-    database_uri='duong dan toi database'
+    database_uri='duong dan toi database',
     read_only=True # True nếu bạn không muốn bot tự học khi chat với user
 )
 
