@@ -2,7 +2,7 @@
 title: Tạo một bot chat thông minh tự động học bằng python và Chatterbot.
 description: "Tạo một chú bot chat thông minh tự động học các tin nhắn..."
 
-date: 2021-01-05T12:30:00Z
+date: 2021-01-06T2:30:00Z
 
 images: ["/img/2021/chatterbot.png"]
 featuredImage: "/img/2021/chatterbot.png"
