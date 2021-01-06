@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Tạo một bot chat thông minh tự động học bằng python và Chatterbot. - Thịnh Ngô Blog</title><meta name="description" content="Tạo một chú bot chat thông minh tự động học các tin nhắn..."><meta property="og:title" content="Tạo một bot chat thông minh tự động học bằng python và Chatterbot." />
+<meta property="og:description" content="Tạo một chú bot chat thông minh tự động học các tin nhắn..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://thinhngo.codes/chatterbot-python/" />
+<meta property="og:image" content="http://thinhngo.codes/img/2021/chatterbot.png" />
+<meta property="article:published_time" content="2021-01-05T12:30:00+00:00" />
+<meta property="article:modified_time" content="2021-01-05T12:30:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://thinhngo.codes/img/2021/chatterbot.png"/>
+
+<meta name="twitter:title" content="Tạo một bot chat thông minh tự động học bằng python và Chatterbot."/>
+<meta name="twitter:description" content="Tạo một chú bot chat thông minh tự động học các tin nhắn..."/>
+<meta name="application-name" content="Thịnh Ngô Blog">
+<meta name="apple-mobile-web-app-title" content="Thịnh Ngô Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://thinhngo.codes/chatterbot-python/" /><link rel="prev" href="http://thinhngo.codes/cpp-tip-trick/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Tạo một bot chat thông minh tự động học bằng python và Chatterbot.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/thinhngo.codes\/chatterbot-python\/"
+        },"image": ["http:\/\/thinhngo.codes\/img\/socialbg.png"],"genre": "posts","keywords": "IT, Python, Artificial Intelligence","wordcount":  1020 ,
+        "url": "http:\/\/thinhngo.codes\/chatterbot-python\/","datePublished": "2021-01-05T12:30:00+00:00","dateModified": "2021-01-05T12:30:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Thịnh Ngô Blog","logo": "http:\/\/thinhngo.codes\/img\/pawprint.png"},"author": {
+                "@type": "Person",
+                "name": "Thịnh Ngô"
+            },"description": "Tạo một chú bot chat thông minh tự động học các tin nhắn..."
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Thịnh Ngô Blog">Thịnh Ngô Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống"> Hỏi Ngu </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Thịnh Ngô Blog">Thịnh Ngô Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống">Hỏi Ngu</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Tạo một bot chat thông minh tự động học bằng python và Chatterbot.</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Thịnh Ngô</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw"></i>programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="01-05-2021">01-05-2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1020 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/2021/chatterbot.png"
+        data-srcset="/img/2021/chatterbot.png, /img/2021/chatterbot.png 1.5x, /img/2021/chatterbot.png 2x"
+        data-sizes="auto"
+        alt="/img/2021/chatterbot.png"
+        title="Tạo một chú bot chat thông minh tự động học các tin nhắn..." /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#chatterbot-là-gì">Chatterbot là gì?</a></li>
+    <li><a href="#cách-chatterbot-hoạt-động">Cách Chatterbot hoạt động</a></li>
+    <li><a href="#cài-đặt">Cài đặt</a></li>
+    <li><a href="#chatbot-đơn-giản">Chatbot đơn giản</a></li>
+    <li><a href="#kết-nối-đến-database">Kết nối đến database</a></li>
+    <li><a href="#tạo-bộ-dữ-liệu-tiếng-việt">Tạo bộ dữ liệu tiếng việt</a>
+      <ul>
+        <li><a href="#định-dạng-dữ-liệu">Định dạng dữ liệu</a></li>
+        <li><a href="#tạo-folder-chứa-bộ-dữ-liệu-và-phân-loại">Tạo folder chứa bộ dữ liệu và phân loại</a></li>
+        <li><a href="#training-với-bộ-câu-hỏi-tiếng-việt">Training với bộ câu hỏi tiếng việt</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="chatterbot-là-gì">Chatterbot là gì?</h1>
+<p>ChatterBot là một công cụ hội thoại dựa trên machine-learning được xây dựng bằng Python, giúp tạo phản hồi dựa vào dữ liệu từ các cuộc hội thoại đã biết. ChatterBot có thể hoạt động với một ngôn ngữ bất kì.</p>
+<p>Ví dụ 1 đoạn hội thoại:</p>
+<blockquote>
+<p>user: Good morning! How are you doing?</p>
+<p>bot: I am doing very well, thank you for asking.</p>
+<p>user: You&rsquo;re welcome.</p>
+<p>bot: Do you like hats?</p>
+</blockquote>
+<h1 id="cách-chatterbot-hoạt-động">Cách Chatterbot hoạt động</h1>
+<p>Chatterbot giống như một đứa trẻ con vậy, khi vừa được sinh ra sẽ không có khả năng giao tiếp. Khi người dùng chat với Chatterbot, đoạn chat sẽ được đưa vào cơ sở dữ liệu của nó. Khi người dùng nhập nhiều câu hỏi hơn, số lượng câu trả lời và độ chính xác sẽ được tăng lên. Chương trình sẽ đưa ra câu trả lời phù hợp nhất.</p>
+<p>Xem kỹ hơn tại <a href="https://chatterbot.readthedocs.io/en/stable/" target="_blank" rel="noopener noreffer">đây</a></p>
+<h1 id="cài-đặt">Cài đặt</h1>
+<p>Chatterbot 1.0.8 ổn định ở phiên bản python 3.6.0</p>
+<p>Cài đặt từ <a href="https://pypi.org/project/ChatterBot/" target="_blank" rel="noopener noreffer">PyPi</a> bằng lệnh:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install chatterbot
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="chatbot-đơn-giản">Chatbot đơn giản</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># import thư viện</span>
+<span class="kn">from</span> <span class="nn">chatterbot</span> <span class="kn">import</span> <span class="n">ChatBot</span>
+<span class="kn">from</span> <span class="nn">chatterbot.trainers</span> <span class="kn">import</span> <span class="n">ChatterBotCorpusTrainer</span>
+
+<span class="c1"># Tạo một instance chatbot với tên là Ron Obvious</span>
+<span class="n">chatbot</span> <span class="o">=</span> <span class="n">ChatBot</span><span class="p">(</span><span class="s1">&#39;Ron Obvious&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tạo trainer để train bot từ các đoan hội thoại có sẵn</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">ChatterBotCorpusTrainer</span><span class="p">(</span><span class="n">chatbot</span><span class="p">)</span>
+
+<span class="c1"># Các đoạn hội thoại có sẵn của chatterbot</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s2">&#34;chatterbot.corpus.english&#34;</span><span class="p">)</span>
+
+<span class="c1"># phản hồi từ bot với đoạn chat &#34;Hello&#34;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">chatbot</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="s2">&#34;Hello&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Chạy đoạn code trên:</p>
+<a class="lightgallery" href="/img/2021/chatterbot_simple.gif" title="/img/2021/chatterbot_simple.gif" data-thumbnail="/img/2021/chatterbot_simple.gif">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/chatterbot_simple.gif"
+            data-srcset="/img/2021/chatterbot_simple.gif, /img/2021/chatterbot_simple.gif 1.5x, /img/2021/chatterbot_simple.gif 2x"
+            data-sizes="auto"
+            alt="/img/2021/chatterbot_simple.gif" />
+    </a>
+<p>Khi chạy đoạn code trên, chatterbot mặc định sẽ tự tạo database là sqlite ở trong máy. Trong bài viết này, mình sẽ hướng dẫn các bạn kết nối bot đến database mongodb và tạo các bộ dữ liệu training cho bot.</p>
+<h1 id="kết-nối-đến-database">Kết nối đến database</h1>
+<p>Mình sử dụng mongodb atlas được free 500mb. Cách sử dụng bạn có thể xem ở bài viết này: <a href="https://viblo.asia/p/dua-du-lieu-len-may-voi-mongodb-atlas-aWj53L1YK6m" target="_blank" rel="noopener noreffer">Viblo - Đưa dữ liệu lên mây với MongoDB Atlas</a></p>
+<p>Sau khi tạo database trên mongodb, các bạn làm theo những bước sau để lấy đường dẫn:
+<figure><a class="lightgallery" href="/img/2021/mongo_step_1.png" title="/img/2021/mongo_step_1.png" data-thumbnail="/img/2021/mongo_step_1.png" data-sub-html="<h2>Chọn Connect Cluster</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/mongo_step_1.png"
+            data-srcset="/img/2021/mongo_step_1.png, /img/2021/mongo_step_1.png 1.5x, /img/2021/mongo_step_1.png 2x"
+            data-sizes="auto"
+            alt="/img/2021/mongo_step_1.png" />
+    </a><figcaption class="image-caption">Chọn Connect Cluster</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/img/2021/mongo_step_2.png" title="/img/2021/mongo_step_2.png" data-thumbnail="/img/2021/mongo_step_2.png" data-sub-html="<h2>Chọn Connect your application</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/mongo_step_2.png"
+            data-srcset="/img/2021/mongo_step_2.png, /img/2021/mongo_step_2.png 1.5x, /img/2021/mongo_step_2.png 2x"
+            data-sizes="auto"
+            alt="/img/2021/mongo_step_2.png" />
+    </a><figcaption class="image-caption">Chọn Connect your application</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/img/2021/mongo_step_3.png" title="/img/2021/mongo_step_3.png" data-thumbnail="/img/2021/mongo_step_3.png" data-sub-html="<h2>Chọn python phiên bản 3.3, và copy đường dẫn, trong đó admin, password là tài khoản của user bạn vừa tạo trong bài viết ở trên, dbname là tên database</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/mongo_step_3.png"
+            data-srcset="/img/2021/mongo_step_3.png, /img/2021/mongo_step_3.png 1.5x, /img/2021/mongo_step_3.png 2x"
+            data-sizes="auto"
+            alt="/img/2021/mongo_step_3.png" />
+    </a><figcaption class="image-caption">Chọn python phiên bản 3.3, và copy đường dẫn, trong đó admin, password là tài khoản của user bạn vừa tạo trong bài viết ở trên, dbname là tên database</figcaption>
+    </figure></p>
+<p>Thay đổi dòng thứ 6 ở đoạn code trong phần &ldquo;Chatbot đơn giản&rdquo; thành:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">chatbot</span> <span class="o">=</span> <span class="n">ChatBot</span><span class="p">(</span>
+    <span class="s1">&#39;Bot thong minh&#39;</span><span class="p">,</span>
+    <span class="n">storage_adapter</span><span class="o">=</span><span class="s1">&#39;chatterbot.storage.MongoDatabaseAdapter&#39;</span><span class="p">,</span>
+    <span class="n">database_uri</span><span class="o">=</span><span class="s1">&#39;đường dẫn bạn vừa copy&#39;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Chạy thử, kết quả trên mongodb atlas:
+<figure><a class="lightgallery" href="/img/2021/mongo_step_0.png" title="/img/2021/mongo_step_0.png" data-thumbnail="/img/2021/mongo_step_0.png" data-sub-html="<h2>Kết quả sau khi kết nối bot đến mongodb</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/mongo_step_0.png"
+            data-srcset="/img/2021/mongo_step_0.png, /img/2021/mongo_step_0.png 1.5x, /img/2021/mongo_step_0.png 2x"
+            data-sizes="auto"
+            alt="/img/2021/mongo_step_0.png" />
+    </a><figcaption class="image-caption">Kết quả sau khi kết nối bot đến mongodb</figcaption>
+    </figure>
+Ta thấy, bộ dữ liệu có sẵn có 5620 câu chat khác nhau, nhưng chưa có tiếng việt, tiếp theo đây mình sẽ hướng dẫn bạn tạo bộ dữ liệu tiếng việt cho chatterbot.</p>
+<h1 id="tạo-bộ-dữ-liệu-tiếng-việt">Tạo bộ dữ liệu tiếng việt</h1>
+<h2 id="định-dạng-dữ-liệu">Định dạng dữ liệu</h2>
+<p>Bộ dữ liệu của chatterbot được định dạng theo cú pháp <a href="http://www.yaml.org/" target="_blank" rel="noopener noreffer">YAML</a></p>
+<p>Một bộ dữ liệu bao gồm nhiều đoạn hội thoại, mỗi đoạn hội thoại có thể dài hoặc ngắn khác nhau. Ví dụ, file <code>chaohoi.yml</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">conversations</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- - <span class="l">Hello</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Hi</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- - <span class="l">Chào</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Chào, bạn khỏe không?</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Tui khỏe, cảm ơn bạn.</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- - <span class="l">Ngày mới tốt lành!</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Cảm ơn bạn</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- - <span class="l">Bạn ăn cơm chưa?</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Mình ăn rồi, còn ban?</span><span class="w">
+</span><span class="w">  </span>- <span class="l">Mình chưa ăn :(</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="tạo-folder-chứa-bộ-dữ-liệu-và-phân-loại">Tạo folder chứa bộ dữ liệu và phân loại</h2>
+<p>Khi chúng ta có nhiều đoạn hội thoại theo chủ đề khác nhau, thì nên chia ra để dễ quản lí. Tạo 1 folder nằm chung thư mục với file python theo định dạng như sau:</p>
+<figure><a class="lightgallery" href="/img/2021/folder_chatterbot.png" title="/img/2021/folder_chatterbot.png" data-thumbnail="/img/2021/folder_chatterbot.png" data-sub-html="<h2>Thư mục bộ dữ liệu</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/folder_chatterbot.png"
+            data-srcset="/img/2021/folder_chatterbot.png, /img/2021/folder_chatterbot.png 1.5x, /img/2021/folder_chatterbot.png 2x"
+            data-sizes="auto"
+            alt="/img/2021/folder_chatterbot.png" width="50%" />
+    </a><figcaption class="image-caption">Thư mục bộ dữ liệu</figcaption>
+    </figure>
+<h2 id="training-với-bộ-câu-hỏi-tiếng-việt">Training với bộ câu hỏi tiếng việt</h2>
+<p>Thay đổi dòng thứ 12 ở đoạn code trong phần &ldquo;Chatbot đơn giản&rdquo; thành:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s2">&#34;./vietnamese&#34;</span><span class="p">)</span> <span class="c1"># train tất cả bộ dữ liệu trong folder</span>
+<span class="n">hoặc</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s2">&#34;./vietnamese/chaohoi.yml&#34;</span><span class="p">)</span> <span class="c1"># train 1 bộ dữ liệu trong folder</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Chạy thử chương trình:
+<figure><a class="lightgallery" href="/img/2021/chatterbot_vietnam.gif" title="/img/2021/chatterbot_vietnam.gif" data-thumbnail="/img/2021/chatterbot_vietnam.gif" data-sub-html="<h2>Chạy thử với bộ dữ liệu Tiếng Việt</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/chatterbot_vietnam.gif"
+            data-srcset="/img/2021/chatterbot_vietnam.gif, /img/2021/chatterbot_vietnam.gif 1.5x, /img/2021/chatterbot_vietnam.gif 2x"
+            data-sizes="auto"
+            alt="/img/2021/chatterbot_vietnam.gif" />
+    </a><figcaption class="image-caption">Chạy thử với bộ dữ liệu Tiếng Việt</figcaption>
+    </figure></p>
+<h1 id="code">Code</h1>
+<p>Vậy là ta đã tạo ra thành công 1 con bot chat. Bạn có thể vào link <a href="https://github.com/Th1nhNg0/chatterbot" target="_blank" rel="noopener noreffer">github</a> để xem thêm.</p>
+<p>Full code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">chatterbot</span> <span class="kn">import</span> <span class="n">ChatBot</span>
+<span class="kn">from</span> <span class="nn">chatterbot.trainers</span> <span class="kn">import</span> <span class="n">ChatterBotCorpusTrainer</span>
+
+<span class="n">chatbot</span> <span class="o">=</span> <span class="n">ChatBot</span><span class="p">(</span>
+    <span class="s1">&#39;Bot THong Minh&#39;</span><span class="p">,</span>
+    <span class="n">storage_adapter</span><span class="o">=</span><span class="s1">&#39;chatterbot.storage.MongoDatabaseAdapter&#39;</span><span class="p">,</span>
+    <span class="n">database_uri</span><span class="o">=</span><span class="s1">&#39;duong dan toi database&#39;</span>
+    <span class="n">read_only</span><span class="o">=</span><span class="bp">True</span> <span class="c1"># True nếu bạn không muốn bot tự học khi chat với user</span>
+<span class="p">)</span>
+
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">ChatterBotCorpusTrainer</span><span class="p">(</span><span class="n">chatbot</span><span class="p">)</span>
+
+<span class="c1"># comment dòng này lại để không phải train mỗi khi chạy chương trình</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s1">&#39;./vietnamese&#39;</span><span class="p">)</span>
+<span class="c1"># chỉ train file mình muốn:</span>
+<span class="c1"># trainer.train(&#39;./vietnamese/chaohoi.yml&#39;)</span>
+
+<span class="c1"># chương trình đơn giản để chat trên terminal</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">bot_input</span> <span class="o">=</span> <span class="n">chatbot</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;user: &#39;</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;bot:&#39;</span><span class="p">,</span> <span class="n">bot_input</span><span class="p">)</span>
+
+    <span class="k">except</span><span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">EOFError</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+        <span class="k">break</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Mình có bonus thêm 1 đoạn code để bạn có thể train bằng tay. Chỉ cần thay đường dẫn và chạy.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">chatterbot</span> <span class="kn">import</span> <span class="n">ChatBot</span>
+<span class="kn">from</span> <span class="nn">chatterbot.conversation</span> <span class="kn">import</span> <span class="n">Statement</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">ChatBot</span><span class="p">(</span>
+    <span class="s1">&#39;Bot Thong Minh&#39;</span><span class="p">,</span>
+    <span class="n">storage_adapter</span><span class="o">=</span><span class="s1">&#39;chatterbot.storage.MongoDatabaseAdapter&#39;</span><span class="p">,</span>
+    <span class="n">database_uri</span><span class="o">=</span><span class="s1">&#39;duong dan&#39;</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_feedback</span><span class="p">():</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="s1">&#39;no&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Please type either &#34;Yes&#34; or &#34;No&#34;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">get_feedback</span><span class="p">()</span>
+
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Type something...&#39;</span><span class="p">)</span>
+        <span class="n">input_statement</span> <span class="o">=</span> <span class="n">Statement</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">input</span><span class="p">())</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">generate_response</span><span class="p">(</span>
+            <span class="n">input_statement</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Is &#34;{}&#34; a coherent response to &#34;{}&#34;? </span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">input_statement</span><span class="o">.</span><span class="n">text</span>
+        <span class="p">))</span>
+        <span class="k">if</span> <span class="n">get_feedback</span><span class="p">()</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;please input the correct one&#39;</span><span class="p">)</span>
+            <span class="n">correct_response</span> <span class="o">=</span> <span class="n">Statement</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">input</span><span class="p">())</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">learn_response</span><span class="p">(</span><span class="n">correct_response</span><span class="p">,</span> <span class="n">input_statement</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Responses added to bot!&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">EOFError</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+        <span class="k">break</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 01-05-2021</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://thinhngo.codes/chatterbot-python/" data-title="Tạo một bot chat thông minh tự động học bằng python và Chatterbot." data-hashtags="IT,Python,Artificial Intelligence"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://thinhngo.codes/chatterbot-python/" data-hashtag="IT"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://thinhngo.codes/chatterbot-python/" data-title="Tạo một bot chat thông minh tự động học bằng python và Chatterbot."><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://thinhngo.codes/chatterbot-python/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/it/">IT</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/artificial-intelligence/">Artificial Intelligence</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/cpp-tip-trick/" class="prev" rel="prev" title="C&#43;&#43; tips &amp; tricks"><i class="fas fa-angle-left fa-fw"></i>C&#43;&#43; tips &amp; tricks</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Thịnh Ngô</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js', { scope: '/' })
+        .then(() => {
+            console.info('Developer for Life Service Worker Registered');
+        }, err => console.error("Developer for Life Service Worker registration failed: ", err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('Developer for Life Service Worker Ready');
+        });
+}
+</script></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://thinhngo.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-RS0X9P8V87', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-RS0X9P8V87" async></script></body>
+</html>

@@ -4,7 +4,16 @@
         <link>http://thinhngo.codes/tags/it/</link>
         <description>IT - Tag - Thịnh Ngô Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor>
-            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Mon, 11 May 2020 10:28:42 &#43;0700</lastBuildDate><atom:link href="http://thinhngo.codes/tags/it/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</lastBuildDate><atom:link href="http://thinhngo.codes/tags/it/" rel="self" type="application/rss+xml" /><item>
+    <title>Tạo một bot chat thông minh tự động học bằng python và Chatterbot.</title>
+    <link>http://thinhngo.codes/chatterbot-python/</link>
+    <pubDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/chatterbot-python/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/2021/chatterbot.png" referrerpolicy="no-referrer">
+            </div>Tạo một chú bot chat thông minh tự động học các tin nhắn...]]></description>
+</item><item>
     <title>C&#43;&#43; tips &amp; tricks</title>
     <link>http://thinhngo.codes/cpp-tip-trick/</link>
     <pubDate>Mon, 11 May 2020 10:28:42 &#43;0700</pubDate>

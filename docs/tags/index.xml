@@ -4,7 +4,28 @@
         <link>http://thinhngo.codes/tags/</link>
         <description>Tags - Tag - Thịnh Ngô Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor>
-            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Mon, 11 May 2020 10:28:42 &#43;0700</lastBuildDate><atom:link href="http://thinhngo.codes/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</lastBuildDate><atom:link href="http://thinhngo.codes/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Artificial Intelligence</title>
+    <link>http://thinhngo.codes/tags/artificial-intelligence/</link>
+    <pubDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/tags/artificial-intelligence/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>IT</title>
+    <link>http://thinhngo.codes/tags/it/</link>
+    <pubDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/tags/it/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Python</title>
+    <link>http://thinhngo.codes/tags/python/</link>
+    <pubDate>Tue, 05 Jan 2021 12:30:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://thinhngo.codes/tags/python/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>C&#43;&#43;</title>
     <link>http://thinhngo.codes/tags/c&#43;&#43;/</link>
     <pubDate>Mon, 11 May 2020 10:28:42 &#43;0700</pubDate>
@@ -17,13 +38,6 @@
     <pubDate>Mon, 11 May 2020 10:28:42 &#43;0700</pubDate>
     <author>Author</author>
     <guid>http://thinhngo.codes/tags/competitive-programming/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>IT</title>
-    <link>http://thinhngo.codes/tags/it/</link>
-    <pubDate>Mon, 11 May 2020 10:28:42 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>http://thinhngo.codes/tags/it/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
