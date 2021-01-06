@@ -2,7 +2,7 @@
     <channel>
         <title>Thịnh Ngô Blog</title>
         <link>http://thinhngo.codes/</link>
-        <description>Blog chia sẻ kiến thức về lập trình, toán,...</description>
+        <description>Blog chia sẻ kiến thức về lập trình,...</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor>
             <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Wed, 06 Jan 2021 02:30:00 &#43;0000</lastBuildDate>
             <atom:link href="http://thinhngo.codes/index.xml" rel="self" type="application/rss+xml" />

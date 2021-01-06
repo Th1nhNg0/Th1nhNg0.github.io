@@ -20,13 +20,7 @@ ChatterBot là một công cụ hội thoại dựa trên machine-learning đư�
 
 Ví dụ 1 đoạn hội thoại:
 
-> user: Good morning! How are you doing?
->
-> bot: I am doing very well, thank you for asking.
->
-> user: You're welcome.
->
-> bot: Do you like hats?
+{{< image src="/img/2021/chatterbot_demo.gif" width="70%" caption="Ví dụ 1 đoạn chat trên terminal"  >}}
 
 # Cách Chatterbot hoạt động
 
@@ -67,7 +61,7 @@ print(response)
 
 Chạy đoạn code trên:
 
-{{< image src="/img/2021/chatterbot_simple.gif">}}
+{{< image src="/img/2021/chatterbot_simple.gif" caption="Chat bot đơn giản" >}}
 
 Khi chạy đoạn code trên, chatterbot mặc định sẽ tự tạo database là sqlite ở trong máy. Trong bài viết này, mình sẽ hướng dẫn các bạn kết nối bot đến database mongodb và tạo các bộ dữ liệu training cho bot.
 

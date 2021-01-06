@@ -18,7 +18,7 @@ uses= "peaceiris/actions-gh-pages@v3.7.3"
 [params]
   # LoveIt theme version
   version = "0.2.X"
-  description = "Blog chia sẻ kiến thức về lập trình, toán,..."
+  description = "Blog chia sẻ kiến thức về lập trình,..."
   images = ["/img/socialbg.jpg"]
   keywords = ["blog", "programming","competitive programming"]
   dateFormat = "01-02-2006"
@@ -52,15 +52,12 @@ uses= "peaceiris/actions-gh-pages@v3.7.3"
     title = ""
     weight = 3
   [[menu.main]]
-    identifier = "hoingu"
-    # you can add extra information before the name (HTML format is supported), such as icons
+    identifier = "AthenaEdu"
     pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "Hỏi Ngu"
-    url = "/hoingu/"
-    # title will be shown when you hover on this menu link
-    title = "Những câu hỏi mà mình thắc mắc trong cuộc sống"
+    name = "AthenaEdu"
+    url = "http://athena.thinhngo.codes/"
+    title = ""
     weight = 4
   [[menu.main]]
     identifier = "about"

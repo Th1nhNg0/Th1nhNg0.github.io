@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/thinhngo.codes\/chatterbot-python\/"
-        },"image": ["http:\/\/thinhngo.codes\/img\/socialbg.png"],"genre": "posts","keywords": "IT, Python, Artificial Intelligence","wordcount":  1022 ,
+        },"image": ["http:\/\/thinhngo.codes\/img\/socialbg.png"],"genre": "posts","keywords": "IT, Python, Artificial Intelligence","wordcount":  1019 ,
         "url": "http:\/\/thinhngo.codes\/chatterbot-python\/","datePublished": "2021-01-06T02:30:00+00:00","dateModified": "2021-01-06T02:30:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Thịnh Ngô Blog","logo": "http:\/\/thinhngo.codes\/img\/pawprint.png"},"author": {
@@ -46,7 +46,7 @@
             <a href="/" title="Thịnh Ngô Blog">Thịnh Ngô Blog</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống"> Hỏi Ngu </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="http://athena.thinhngo.codes/" rel="noopener noreffer" target="_blank"> AthenaEdu </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -89,7 +89,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/hoingu/" title="Những câu hỏi mà mình thắc mắc trong cuộc sống">Hỏi Ngu</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="http://athena.thinhngo.codes/" title="" rel="noopener noreffer" target="_blank">AthenaEdu</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Tạo một bot chat thông minh tự động học bằng python và Chatterbot.</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Thịnh Ngô</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw"></i>programming</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="01-06-2021">01-06-2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1022 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="01-06-2021">01-06-2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1019 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -140,12 +140,16 @@
             </div><div class="content" id="content"><h1 id="chatterbot-là-gì">Chatterbot là gì?</h1>
 <p>ChatterBot là một công cụ hội thoại dựa trên machine-learning được xây dựng bằng Python, giúp tạo phản hồi dựa vào dữ liệu từ các cuộc hội thoại đã biết. ChatterBot có thể hoạt động với một ngôn ngữ bất kì.</p>
 <p>Ví dụ 1 đoạn hội thoại:</p>
-<blockquote>
-<p>user: Good morning! How are you doing?</p>
-<p>bot: I am doing very well, thank you for asking.</p>
-<p>user: You&rsquo;re welcome.</p>
-<p>bot: Do you like hats?</p>
-</blockquote>
+<figure><a class="lightgallery" href="/img/2021/chatterbot_demo.gif" title="/img/2021/chatterbot_demo.gif" data-thumbnail="/img/2021/chatterbot_demo.gif" data-sub-html="<h2>Ví dụ 1 đoạn chat trên terminal</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/2021/chatterbot_demo.gif"
+            data-srcset="/img/2021/chatterbot_demo.gif, /img/2021/chatterbot_demo.gif 1.5x, /img/2021/chatterbot_demo.gif 2x"
+            data-sizes="auto"
+            alt="/img/2021/chatterbot_demo.gif" width="70%" />
+    </a><figcaption class="image-caption">Ví dụ 1 đoạn chat trên terminal</figcaption>
+    </figure>
 <h1 id="cách-chatterbot-hoạt-động">Cách Chatterbot hoạt động</h1>
 <p>Chatterbot giống như một đứa trẻ con vậy, khi vừa được sinh ra sẽ không có khả năng giao tiếp. Khi người dùng chat với Chatterbot, đoạn chat sẽ được đưa vào cơ sở dữ liệu của nó. Khi người dùng nhập nhiều câu hỏi hơn, số lượng câu trả lời và độ chính xác sẽ được tăng lên. Chương trình sẽ đưa ra câu trả lời phù hợp nhất.</p>
 <p>Xem kỹ hơn tại <a href="https://chatterbot.readthedocs.io/en/stable/" target="_blank" rel="noopener noreffer">đây</a></p>
@@ -200,7 +204,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>Chạy đoạn code trên:</p>
-<a class="lightgallery" href="/img/2021/chatterbot_simple.gif" title="/img/2021/chatterbot_simple.gif" data-thumbnail="/img/2021/chatterbot_simple.gif">
+<figure><a class="lightgallery" href="/img/2021/chatterbot_simple.gif" title="/img/2021/chatterbot_simple.gif" data-thumbnail="/img/2021/chatterbot_simple.gif" data-sub-html="<h2>Chat bot đơn giản</h2>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -208,7 +212,8 @@
             data-srcset="/img/2021/chatterbot_simple.gif, /img/2021/chatterbot_simple.gif 1.5x, /img/2021/chatterbot_simple.gif 2x"
             data-sizes="auto"
             alt="/img/2021/chatterbot_simple.gif" />
-    </a>
+    </a><figcaption class="image-caption">Chat bot đơn giản</figcaption>
+    </figure>
 <p>Khi chạy đoạn code trên, chatterbot mặc định sẽ tự tạo database là sqlite ở trong máy. Trong bài viết này, mình sẽ hướng dẫn các bạn kết nối bot đến database mongodb và tạo các bộ dữ liệu training cho bot.</p>
 <h1 id="kết-nối-đến-database">Kết nối đến database</h1>
 <p>Mình sử dụng mongodb atlas được free 500mb. Cách sử dụng bạn có thể xem ở bài viết này: <a href="https://viblo.asia/p/dua-du-lieu-len-may-voi-mongodb-atlas-aWj53L1YK6m" target="_blank" rel="noopener noreffer">Viblo - Đưa dữ liệu lên mây với MongoDB Atlas</a></p>
