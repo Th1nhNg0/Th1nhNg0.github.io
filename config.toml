@@ -36,27 +36,27 @@ uses= "peaceiris/actions-gh-pages@v3.7.3"
     title = ""
     weight = 1
   [[menu.main]]
+    identifier = "game_dev_logs"
+    pre = ""
+    post = ""
+    name = "GameDev Log"
+    url = "/game_dev_logs/"
+    title = ""
+    weight = 2
+  [[menu.main]]
     identifier = "tags"
     pre = ""
     post = ""
     name = "Tags"
     url = "/tags/"
     title = ""
-    weight = 2
+    weight = 3
   [[menu.main]]
     identifier = "categories"
     pre = ""
     post = ""
     name = "Categories"
     url = "/categories/"
-    title = ""
-    weight = 3
-  [[menu.main]]
-    identifier = "AthenaEdu"
-    pre = ""
-    post = ""
-    name = "AthenaEdu"
-    url = "https://athena.thinhngo.codes/"
     title = ""
     weight = 4
   [[menu.main]]
