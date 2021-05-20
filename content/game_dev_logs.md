@@ -1,6 +1,8 @@
 ---
 title: "GameDev Log with Godot 3.3"
 comment: true
+images: ["/img/game_dev/social_image.png"]
+description: "Hành trình trở thành một Game Developer?"
 ---
 
 # 20/5/2021
