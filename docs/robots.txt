@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://thinhngo.codes/sitemap.xml
+Sitemap: http://th1nhng0.github.io/sitemap.xml

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - Thịnh Ngô Blog</title>
-        <link>http://thinhngo.codes/categories/</link>
+        <link>http://th1nhng0.github.io/categories/</link>
         <description>Categories - Category - Thịnh Ngô Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ngophuthinh2001@gmail.com (Thịnh Ngô)</managingEditor>
-            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Wed, 06 Jan 2021 02:30:00 &#43;0000</lastBuildDate><atom:link href="http://thinhngo.codes/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ngophuthinh2001@gmail.com (Thịnh Ngô)</webMaster><lastBuildDate>Wed, 06 Jan 2021 02:30:00 &#43;0000</lastBuildDate><atom:link href="http://th1nhng0.github.io/categories/" rel="self" type="application/rss+xml" /><item>
     <title>programming</title>
-    <link>http://thinhngo.codes/categories/programming/</link>
+    <link>http://th1nhng0.github.io/categories/programming/</link>
     <pubDate>Wed, 06 Jan 2021 02:30:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://thinhngo.codes/categories/programming/</guid>
+    <guid>http://th1nhng0.github.io/categories/programming/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
