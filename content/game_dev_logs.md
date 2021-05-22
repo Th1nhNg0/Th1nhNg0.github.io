@@ -5,6 +5,11 @@ images: ["/img/game_dev/social_image.png"]
 description: "Hành trình trở thành một Game Developer?"
 ---
 
+# 22/05/2021
+
+Simple interact and dialog with NPC.
+{{< image src="/img/game_dev/22052021.gif"  caption="NPC interaction"  >}}
+
 # 20/5/2021
 
 Simple movement 2d platform. The character have 4 animation: IDLE, WALK, RUN, JUMP
