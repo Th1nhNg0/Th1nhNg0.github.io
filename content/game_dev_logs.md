@@ -5,6 +5,12 @@ images: ["/img/game_dev/social_image.png"]
 description: "Hành trình trở thành một Game Developer?"
 ---
 
+# 01/06/2021
+
+Just find this awesome tileset. I'm still learning to make a map so no progress xD
+{{< image src="/img/game_dev/01062021_2.png"  width="20%"   caption="Awesome tileset"  >}}
+{{< image src="/img/game_dev/01062021_1.png"caption="I'm trying to make a map"  >}}
+
 # 22/05/2021
 
 Simple interact and dialog with NPC.
